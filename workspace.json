@@ -1,6 +1,235 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "api": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api"],
+          "options": {
+            "jestConfig": "libs/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/api",
+      "sourceRoot": "libs/api/src"
+    },
+    "cdk": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/cdk/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/cdk"],
+          "options": {
+            "jestConfig": "libs/cdk/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/cdk",
+      "sourceRoot": "libs/cdk/src"
+    },
+    "common": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/common/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common"],
+          "options": {
+            "jestConfig": "libs/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src"
+    },
+    "core": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core"],
+          "options": {
+            "jestConfig": "libs/core/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src"
+    },
+    "design": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/design/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/design"],
+          "options": {
+            "jestConfig": "libs/design/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/design",
+      "sourceRoot": "libs/design/src"
+    },
+    "vnd.github+json": {
+      "projectType": "application",
+      "root": "apps/vnd.github+json",
+      "sourceRoot": "apps/vnd.github+json/src",
+      "targets": {
+        "build": {
+          "executor": "@nx-plus/vue:browser",
+          "options": {
+            "dest": "dist/apps/vnd.github+json",
+            "index": "apps/vnd.github+json/public/index.html",
+            "main": "apps/vnd.github+json/src/main.ts",
+            "tsConfig": "apps/vnd.github+json/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "mode": "production",
+              "filenameHashing": true,
+              "productionSourceMap": true,
+              "css": {
+                "extract": true,
+                "sourceMap": false
+              }
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nx-plus/vue:dev-server",
+          "options": {
+            "browserTarget": "vnd.github+json:build",
+            "css": {
+              "requireModuleExtension": false
+            }
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vnd.github+json:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/vnd.github+json/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/vnd.github+json"],
+          "options": {
+            "jestConfig": "apps/vnd.github+json/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "vnd.github+json-e2e": {
+      "root": "apps/vnd.github+json-e2e",
+      "sourceRoot": "apps/vnd.github+json-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/vnd.github+json-e2e/cypress.json",
+            "devServerTarget": "vnd.github+json:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vnd.github+json:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/vnd.github+json-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "schema": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/schema/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/schema"],
+          "options": {
+            "jestConfig": "libs/schema/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/schema",
+      "sourceRoot": "libs/schema/src"
+    },
+    "server": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server"],
+          "options": {
+            "jestConfig": "libs/server/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/server",
+      "sourceRoot": "libs/server/src"
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }

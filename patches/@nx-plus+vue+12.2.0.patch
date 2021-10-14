@@ -1,0 +1,11 @@
+index 5cb397a..1ef7abf
+--- a/node_modules/@nx-plus/vue/src/builders/dev-server/builder.js
++++ b/node_modules/@nx-plus/vue/src/builders/dev-server/builder.js
+@@ -42,6 +42,7 @@ function runBuilder(options, context) {
+                 .reduce((previous, key) => (Object.assign(Object.assign({}, previous), { [key]: options[key] })), {});
+             const browserName = yield context.getBuilderNameForTarget(browserTarget);
+             const browserOptions = yield context.validateOptions(Object.assign(Object.assign({}, rawBrowserOptions), overrides), browserName);
++            delete browserOptions.css.requireModuleExtension;
+             const projectRoot = yield utils_1.getProjectRoot(context);
+             const babelConfig = utils_1.getBabelConfig(projectRoot);
+             const inlineOptions = {

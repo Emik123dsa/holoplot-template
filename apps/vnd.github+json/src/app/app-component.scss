@@ -1,0 +1,9 @@
+.cdk {
+  &-main {
+    &-layout {
+      @apply cdk-block;
+      @apply cdk-w-full;
+      @apply cdk-relative;
+    }
+  }
+}
