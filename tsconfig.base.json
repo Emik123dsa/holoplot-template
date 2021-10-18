@@ -1,8 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "typeRoots": ["node_modules/@types", "types"],
-
+    "typeRoots": [
+      "node_modules/@types",
+      "types"
+    ],
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -10,26 +12,44 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-
     "downlevelIteration": true,
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"],
-
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "ScriptHost"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-
     "baseUrl": "./libs",
     "paths": {
-      "@holoplot/api": ["./api/src/index.ts"],
-      "@holoplot/cdk": ["./cdk/src/index.ts"],
-      "@holoplot/common": ["./common/src/index.ts"],
-      "@holoplot/core": ["./core/src/index.ts"],
-      "@holoplot/design": ["./design/src/index.ts"],
-      "@holoplot/schema": ["./schema/src/index.ts"],
-      "@holoplot/server": ["./server/src/index.ts"]
+      "@holoplot/api": [
+        "./api/src/index.ts"
+      ],
+      "@holoplot/cdk": [
+        "./cdk/src/index.ts"
+      ],
+      "@holoplot/common": [
+        "./common/src/index.ts"
+      ],
+      "@holoplot/core": [
+        "./core/src/index.ts"
+      ],
+      "@holoplot/design": [
+        "./design/src/index.ts"
+      ],
+      "@holoplot/schema": [
+        "./schema/src/index.ts"
+      ],
+      "@holoplot/server": [
+        "./server/src/index.ts"
+      ]
     }
   },
-
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

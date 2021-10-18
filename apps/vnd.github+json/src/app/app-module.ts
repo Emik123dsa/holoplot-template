@@ -10,20 +10,22 @@ import {
   AsyncSubject,
 } from 'rxjs';
 import { LayoutPlugin } from '@holoplot/cdk/layout';
-
+import { CdkLayoutContainerPlugin } from '@holoplot/cdk/container';
 import { RouterFactory } from '@router';
-import AppComponent from '@/app-component';
+
+import AppComponent from '@/app-component.vue';
 
 Vue.config.productionTip =
   process.env.NODE_ENV === 'development' ? false : true;
 
 Vue.use(LayoutPlugin);
+Vue.use(CdkLayoutContainerPlugin);
 
 Vue.use(VueRx, {
-  Observable,
   BehaviorSubject,
   ReplaySubject,
   AsyncSubject,
+  Observable,
   Subject,
 });
 
@@ -73,9 +75,11 @@ export class AppFactory {
 
 export const bootstrap: <T>() => Promise<T> = <T>(): Promise<T> => {
   const appFactory: AppFactory = AppFactory.createApp();
-  return new Promise((
-    resolve: (value: T | PromiseLike<T>) => void,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    reject: (reason?: Error) => void,
-  ) => resolve(appFactory as T));
+  return new Promise(
+    (
+      resolve: (value: T | PromiseLike<T>) => void,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      reject: (reason?: Error) => void,
+    ) => resolve(appFactory as T),
+  );
 };

@@ -14,7 +14,14 @@ import {
   iif,
   of,
   EMPTY,
+  switchMap,
+  Observer,
+  TeardownLogic,
+  Subscriber,
+  OperatorFunction,
 } from 'rxjs';
+
+import { Repository } from '@holoplot/api/github/models';
 
 export const AppComponentConstant: symbol = Symbol.for('AppComponent');
 
@@ -28,22 +35,10 @@ export const AppComponentConstant: symbol = Symbol.for('AppComponent');
 })
 export default class AppComponent extends Vue {
   public mounted(): void {
-    fromFetch('https://api.github.com/users/holoplot/repos', {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        'Content-Type': 'application/vnd.github+json',
-      },
-    })
-      .pipe(
-        mergeMap(({ json, ok }) => iif(() => ok, of(json), EMPTY)),
-        throwIfEmpty(),
-        observeOn(asyncScheduler),
-        shareReplay({ refCount: true, bufferSize: 1 }),
-      )
-      .subscribe({
-        next: () => {},
-        error: (err: Error) => {},
-        complete: () => {},
-      });
+    // findRepositoriesByName<RepositoryModel[]>('holoplot')
+    //   .pipe(shareReplay({ refCount: true, bufferSize: 4 }))
+    //   .subscribe((data: RepositoryModel[] | null) => {
+    //     console.log(data && data[0].archive_url);
+    //   });
   }
 }

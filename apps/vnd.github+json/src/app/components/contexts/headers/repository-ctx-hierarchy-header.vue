@@ -1,0 +1,13 @@
+<template
+  src="@ctx/headers/repository-ctx-hierarchy-header.html"
+  lang="html"
+></template>
+<script
+  src="@ctx/headers/repository-ctx-hierarchy-header.ts"
+  lang="ts"
+></script>
+<style
+  src="@ctx/headers/repository-ctx-hierarchy-header.scss"
+  lang="scss"
+  scoped
+></style>

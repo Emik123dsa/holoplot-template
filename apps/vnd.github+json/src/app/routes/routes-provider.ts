@@ -4,7 +4,7 @@ export const routesProvider: RouteConfig[] = [
   {
     path: '/',
     name: 'RepositoriesHierarchy',
-    component: () => import('@views/repository-hierarchy-view.vue'),
+    component: () => import('@views/repository-hierarchy.vue'),
   },
   {
     path: '/:repositoryId',
@@ -12,7 +12,7 @@ export const routesProvider: RouteConfig[] = [
     meta: {
       requiredRepositoryHash: true,
     },
-    component: () => import('@views/commit-history-view.vue'),
+    component: () => import('@views/commit-history.vue'),
   },
   {
     path: '*',

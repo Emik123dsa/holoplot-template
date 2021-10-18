@@ -1,0 +1,14 @@
+.cdk {
+  &-repository {
+    &-ctx {
+      &-hierarchy {
+        @apply cdk-flex;
+        @apply cdk-flex-grow-0;
+        @apply cdk-flex-shrink-0;
+        @apply cdk-flex-nowrap;
+        @apply cdk-items-center;
+        @apply cdk-justify-start;
+      }
+    }
+  }
+}

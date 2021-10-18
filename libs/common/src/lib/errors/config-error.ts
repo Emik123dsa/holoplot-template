@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-import { AbstractConfigError } from "./abstract-config-error";
+import { AbstractConfigError } from './abstract-config-error';
 
 /**
  * Creates an exception instance for {@link ConfigError}.
@@ -50,7 +50,7 @@ export class ConfigError extends AbstractConfigError<string> {
    * @return {@link String}  {Readonly<string>}
    * @memberof ConfigError
    */
-   public override getMessage(): Readonly<string> {
+  public override getMessage(): Readonly<string> {
     return this.message;
   }
 }

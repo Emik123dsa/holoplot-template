@@ -3,17 +3,31 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node"],
+    "types": [
+      "jest",
+      "node"
+    ],
     "jsx": "preserve",
     "esModuleInterop": true,
     "composite": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "~/*": ["./src/*"],
-      "@/*": ["./src/app/*"]
+      "~/*": [
+        "./src/*"
+      ],
+      "@/*": [
+        "./src/app/*"
+      ]
     }
   },
-
-  "files": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.d.ts"],
-  "include": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.d.ts"]
+  "files": [
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.d.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.d.ts"
+  ]
 }

@@ -1,0 +1,13 @@
+.cdk {
+  &-repository {
+    &-ctx {
+      &-hierarchy {
+        &-header {
+          @apply cdk-border-b;
+          @apply cdk-py-4;
+          @apply cdk-border-collapse;
+        }
+      }
+    }
+  }
+}

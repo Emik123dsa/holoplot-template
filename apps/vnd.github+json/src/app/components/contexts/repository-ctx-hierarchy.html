@@ -1,0 +1,33 @@
+<fragment>
+  <div class="cdk-relative cdk-block cdk-min-w-full" role="contentinfo">
+    <cdk-repository-ctx-hierarchy-header></cdk-repository-ctx-hierarchy-header>
+  </div>
+
+  <div class="cdk-relative cdk-block cdk-min-w-full" role="contentinfo">
+    <div
+      role="main"
+      class="cdk-repository-ctx-hierarchy"
+      aria-labelledby="cdk-repository-ctx-name"
+    >
+      <div class="cdk-mt-4" aria-labelledby="cdkRepositoryСtxName">
+        <div class="cdk-font-bold cdk-leading-snug">
+          <h2 id="cdkRepositoryСtxName" class="cdk-text-left cdk-text-md">
+            {{ cdkCtxName }}
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="cdk-mt-4" role="main">
+      <div
+        role="contentinfo"
+        class="cdk-repository-hierarchy"
+        aria-labelledby="cdkRepositoryHierarachyList"
+      >
+        <cdk-repository-hierarchy-list
+          :repositories="ctxRepositories"
+          id="cdkRepositoryHierarachyList"
+        ></cdk-repository-hierarchy-list>
+      </div>
+    </div>
+  </div>
+</fragment>
