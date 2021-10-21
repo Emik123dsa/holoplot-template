@@ -7,12 +7,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "libs/api/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api"],
+          "outputs": [
+            "coverage/libs/api"
+          ],
           "options": {
             "jestConfig": "libs/api/jest.config.js",
             "passWithNoTests": true
@@ -28,12 +32,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/cdk/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "libs/cdk/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/cdk"],
+          "outputs": [
+            "coverage/libs/cdk"
+          ],
           "options": {
             "jestConfig": "libs/cdk/jest.config.js",
             "passWithNoTests": true
@@ -49,12 +57,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/common/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "libs/common/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/common"],
+          "outputs": [
+            "coverage/libs/common"
+          ],
           "options": {
             "jestConfig": "libs/common/jest.config.js",
             "passWithNoTests": true
@@ -70,12 +82,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/core/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "libs/core/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core"],
+          "outputs": [
+            "coverage/libs/core"
+          ],
           "options": {
             "jestConfig": "libs/core/jest.config.js",
             "passWithNoTests": true
@@ -91,12 +107,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/design/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "libs/design/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/design"],
+          "outputs": [
+            "coverage/libs/design"
+          ],
           "options": {
             "jestConfig": "libs/design/jest.config.js",
             "passWithNoTests": true
@@ -106,18 +126,18 @@
       "root": "libs/design",
       "sourceRoot": "libs/design/src"
     },
-    "vnd.github+json": {
+    "template": {
       "projectType": "application",
-      "root": "apps/vnd.github+json",
-      "sourceRoot": "apps/vnd.github+json/src",
+      "root": "apps/template",
+      "sourceRoot": "apps/template/src",
       "targets": {
         "build": {
           "executor": "@nx-plus/vue:browser",
           "options": {
-            "dest": "dist/apps/vnd.github+json",
-            "index": "apps/vnd.github+json/public/index.html",
-            "main": "apps/vnd.github+json/src/main.ts",
-            "tsConfig": "apps/vnd.github+json/tsconfig.app.json"
+            "dest": "dist/apps/template",
+            "index": "apps/template/public/index.html",
+            "main": "apps/template/src/main.ts",
+            "tsConfig": "apps/template/tsconfig.app.json"
           },
           "configurations": {
             "production": {
@@ -134,55 +154,63 @@
         "serve": {
           "executor": "@nx-plus/vue:dev-server",
           "options": {
-            "browserTarget": "vnd.github+json:build",
+            "browserTarget": "template:build",
             "css": {
               "requireModuleExtension": false
             }
           },
           "configurations": {
             "production": {
-              "browserTarget": "vnd.github+json:build:production"
+              "browserTarget": "template:build:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/vnd.github+json/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "apps/template/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/vnd.github+json"],
+          "outputs": [
+            "coverage/apps/template"
+          ],
           "options": {
-            "jestConfig": "apps/vnd.github+json/jest.config.js",
+            "jestConfig": "apps/template/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "vnd.github+json-e2e": {
-      "root": "apps/vnd.github+json-e2e",
-      "sourceRoot": "apps/vnd.github+json-e2e/src",
+    "template-e2e": {
+      "root": "apps/template-e2e",
+      "sourceRoot": "apps/template-e2e/src",
       "projectType": "application",
       "targets": {
         "e2e": {
           "executor": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/vnd.github+json-e2e/cypress.json",
-            "devServerTarget": "vnd.github+json:serve"
+            "cypressConfig": "apps/template-e2e/cypress.json",
+            "devServerTarget": "template:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "vnd.github+json:serve:production"
+              "devServerTarget": "template:serve:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/vnd.github+json-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/template-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -193,12 +221,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/schema/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "libs/schema/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/schema"],
+          "outputs": [
+            "coverage/libs/schema"
+          ],
           "options": {
             "jestConfig": "libs/schema/jest.config.js",
             "passWithNoTests": true
@@ -214,12 +246,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/server/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "libs/server/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/server"],
+          "outputs": [
+            "coverage/libs/server"
+          ],
           "options": {
             "jestConfig": "libs/server/jest.config.js",
             "passWithNoTests": true

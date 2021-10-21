@@ -7,7 +7,7 @@ module.exports = {
   // mode: 'jit',
   prefix: cdkPrefix,
   purge: {
-    enabled: process.env.NODE_ENV === 'production',
+    // enabled: process.env.NODE_ENV === 'production',
     content: ['./src/**/*.{html,ts,tsx,vue}', './public/**/*.html'],
   },
   future: {
@@ -58,6 +58,7 @@ module.exports = {
       },
       violet: {
         50: '#6B6E8C',
+        100: '#42455F',
         DEFAULT: 'var(--cdk-palette-violet)',
       },
       gray: {
@@ -99,6 +100,7 @@ module.exports = {
     extend: {
       borderColor: ['focus-visible'],
       opacity: ['responsive', 'hover'],
+      borderWidth: ['responsive', 'hover'],
     },
   },
   plugins: [

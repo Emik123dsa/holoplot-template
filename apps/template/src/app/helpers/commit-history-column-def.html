@@ -1,0 +1,89 @@
+<fragment>
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <div role="cell">
+      <div
+        class="
+          cdk-inline-flex cdk-items-center cdk-justify-between cdk-flex-nowrap
+        "
+      >
+        <template v-if="cdkColumnDef.author">
+          <div
+            :aria-labelledby="cdkColumnDef.sha"
+            class="
+              cdk-relative
+              cdk-block
+              cdk-h-6
+              cdk-w-auto
+              cdk-select-none
+              cdk-pointer-events-none
+            "
+          >
+            <picture :id="cdkColumnDef.sha" role="img">
+              <source
+                :srcset="cdkColumnDef.author.avatarUrl"
+                media="(min-width: 1024px)"
+              />
+              <img
+                :src="cdkColumnDef.author.avatarUrl"
+                :alt="cdkColumnDef.commit.author.name"
+                :srcset="cdkColumnDef.author.avatarUrl"
+                class="cdk-max-h-6 cdk-max-w-auto cdk-rounded-full"
+              />
+            </picture>
+          </div>
+        </template>
+        <div class="cdk-relative cdk-block cdk-pl-4 cdk-flex-auto">
+          <p class="cdk-text-left cdk-leading-tight cdk-tracking-wide">
+            <strong class="cdk-text-sm cdk-font-medium cdk-normal-case">
+              {{ cdkColumnDef.commit.author.name || 'Author name not found' }}
+            </strong>
+          </p>
+
+          <template
+            v-if="cdkColumnDef.author && cdkColumnDef.commit.author.name !== cdkColumnDef.author.login"
+          >
+            <span class="cdk-text-left cdk-leading-tight cdk-tracking-wide">
+              {{ cdkColumnDef.author.login || 'Author name not found' }}
+            </span>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <div role="cell">
+      <p class="cdk-text-left cdk-leading-tight cdk-tracking-wide">
+        <strong class="cdk-text-sm cdk-font-normal cdk-normal-case">
+          {{ cdkColumnDef.commit.message || 'Message Not Found' }}
+        </strong>
+      </p>
+    </div>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <div role="cell" :index="index">
+      <p
+        class="cdk-text-left cdk-leading-tight cdk-tracking-wide"
+        :aria-labelledby="cdkColumnDef.nodeId"
+      >
+        <strong
+          :id="cdkColumnDef.nodeId"
+          class="cdk-text-sm cdk-font-medium cdk-normal-case"
+        >
+          {{ cdkColumnDef.commit.author.email || 'Email not found'}}
+        </strong>
+      </p>
+    </div>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <div role="cell">
+      <p class="cdk-text-left cdk-leading-tight cdk-tracking-wide">
+        <strong class="cdk-text-sm cdk-normal-case cdk-font-normal">
+          {{ cdkColumnDef.commit.author.date | cdk-date('MMM dd yyyy') }}
+        </strong>
+      </p>
+    </div>
+  </div>
+</fragment>

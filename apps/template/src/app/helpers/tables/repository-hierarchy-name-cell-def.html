@@ -1,0 +1,44 @@
+<fragment>
+  <div role="cell">
+    <div
+      class="
+        cdk-inline-flex cdk-flex-nowrap cdk-items-center cdk-place-content-start
+      "
+    >
+      <div
+        v-if="cdkRowDef.owner.avatarUrl"
+        class="cdk-max-h-6 cdk-select-none cdk-pointer-events-none"
+      >
+        <img
+          :src="cdkRowDef.owner.avatarUrl"
+          :srcset="cdkRowDef.owner.avatarUrl"
+          loading="lazy"
+          :alt="cdkRowDef.owner.login"
+          class="
+            cdk-h-auto
+            cdk-max-h-6
+            cdk-rounded-lg
+            cdk-relative
+            cdk-bg-contain
+            cdk-bg-no-repeat
+          "
+        />
+      </div>
+      <div class="cdk-pl-4">
+        <p class="cdk-text-left cdk-leading-tight cdk-tracking-wide">
+          <strong
+            class="
+              cdk-break-all
+              cdk-font-medium
+              cdk-break-words
+              cdk-whitespace-pre-line
+              cdk-repository-hierarchy-cell-def
+            "
+          >
+            {{ cdkRowDef.name }}
+          </strong>
+        </p>
+      </div>
+    </div>
+  </div></fragment
+>

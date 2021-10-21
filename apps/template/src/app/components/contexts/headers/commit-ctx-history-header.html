@@ -1,0 +1,47 @@
+<fragment>
+  <header
+    class="cdk-commit-ctx-history-header"
+    aria-labelledby="cdkCommitHistoryName"
+  >
+    <cdk-layout-container :is-centered="false">
+      <div
+        role="navigation"
+        class="cdk-commit-ctx-history"
+        aria-label="cdkCtxHistoryHeader"
+      >
+        <div
+          class="
+            cdk-flex
+            cdk-flex-row
+            cdk-flex-nowrap
+            cdk-items-center
+            cdk-justify-between
+          "
+        >
+          <div class="cdk-commit-history">
+            <h1
+              id="cdkCommitHistoryName"
+              class="cdk-text-left cdk-text-lg cdk-font-medium"
+              role="heading"
+            >
+              {{ dataHeaderName }}
+            </h1>
+          </div>
+          <div
+            class="
+              cdk-flex cdk-flex-row cdk-flex-nowrap cdk-items-center cdk-mr-6
+            "
+          >
+            <div
+              class="cdk-flex-auto cdk-cursor-pointer cdk-mr-6 cdk-opacity-50"
+            >
+              <cdk-base-icon size="32" fill="currentColor"
+                >mdiMagnify</cdk-base-icon
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </cdk-layout-container>
+  </header>
+</fragment>

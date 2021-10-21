@@ -1,0 +1,57 @@
+<fragment>
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <cdk-repository-hierarchy-name-cell-def
+      :index="index"
+      :cdk-row-def="cdkColumnDef"
+    >
+    </cdk-repository-hierarchy-name-cell-def>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <cdk-repository-hierarchy-branch-cell-def
+      :index="index"
+      :cdk-row-def="cdkColumnDef"
+    >
+    </cdk-repository-hierarchy-branch-cell-def>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <template v-if="cdkColumnDef.language">
+      <cdk-repository-hierarchy-language-cell-def
+        :index="index"
+        :cdk-row-def="cdkColumnDef.language"
+      >
+      </cdk-repository-hierarchy-language-cell-def>
+    </template>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <template v-if="cdkColumnDef.license">
+      <cdk-repository-hierarchy-license-cell-def
+        :index="index"
+        :cdk-row-def="cdkColumnDef.license"
+      >
+      </cdk-repository-hierarchy-license-cell-def>
+    </template>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <template v-if="cdkColumnDef.createdAt">
+      <cdk-repository-hierarchy-date-cell-def
+        :index="index"
+        :cdk-row-def="cdkColumnDef.createdAt"
+      >
+      </cdk-repository-hierarchy-date-cell-def>
+    </template>
+  </div>
+
+  <div role="row" class="cdk-col-span-auto" :aria-rowindex="index">
+    <template v-if="cdkColumnDef.updatedAt">
+      <cdk-repository-hierarchy-date-cell-def
+        :index="index"
+        :cdk-row-def="cdkColumnDef.updatedAt"
+      >
+      </cdk-repository-hierarchy-date-cell-def>
+    </template>
+  </div>
+</fragment>

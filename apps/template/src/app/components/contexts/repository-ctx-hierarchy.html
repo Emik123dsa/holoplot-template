@@ -1,0 +1,84 @@
+<fragment>
+  <div class="cdk-relative cdk-block cdk-min-w-full" role="contentinfo">
+    <cdk-repository-ctx-hierarchy-header></cdk-repository-ctx-hierarchy-header>
+  </div>
+
+  <section class="cdk-relative cdk-block cdk-min-w-full" role="contentinfo">
+    <div
+      role="main"
+      class="cdk-repository-ctx-hierarchy"
+      aria-labelledby="cdk-repository-ctx-name"
+    >
+      <cdk-layout-container :is-centered="false">
+        <div class="cdk-mt-4 cdk-w-full" aria-labelledby="cdkRepositoryСtxName">
+          <div class="cdk-flex cdk-flex-row cdk-flex-nowrap cdk-items-center">
+            <div class="cdk-font-medium cdk-leading-snug cdk-flex-auto">
+              <h2 id="cdkRepositoryСtxName" class="cdk-text-left cdk-text-md">
+                {{ dataName }}
+              </h2>
+            </div>
+            <div class="cdk-flex-grow-0 cdk-flex-shrink-1 cdk-pr-6">
+              <cdk-flat-button
+                tag="button"
+                color="primary"
+                size="normal"
+                aria-label="addDataSource"
+                aria-hidden="false"
+              >
+                <cdk-base-icon fill="currentColor" size="20"
+                  >mdiPlus</cdk-base-icon
+                >
+                <span id="addDataSource" class="cdk-pl-1 cdk-text-xs"
+                  >Add repository</span
+                >
+              </cdk-flat-button>
+            </div>
+          </div>
+        </div>
+      </cdk-layout-container>
+    </div>
+
+    <div class="cdk-mt-4" role="main">
+      <cdk-layout-container :is-centered="false">
+        <div
+          role="contentinfo"
+          class="cdk-repository-filters"
+          aria-labelledby="cdkRepositoryHierarchyFilters"
+        >
+          <div class="cdk-flex cdk-flex-row cdk-flex-nowrap cdk-items-center">
+            <cdk-flat-button
+              tag="button"
+              color="primary"
+              size="normal"
+              aria-label="addDataSource"
+              aria-hidden="false"
+            >
+              <span id="addDataSource" class="cdk-pl-1 cdk-text-xs"
+                >View all
+                <strong
+                  class="cdk-bg-gray-100 cdk-px-1 cdk-py-[2px] cdk-rounded-full"
+                  >{{dataSourceCount}}
+                </strong></span
+              >
+            </cdk-flat-button>
+          </div>
+        </div>
+      </cdk-layout-container>
+    </div>
+
+    <div class="cdk-mt-4" role="main">
+      <cdk-layout-container :is-centered="false">
+        <div
+          role="contentinfo"
+          class="cdk-repository-hierarchy"
+          aria-labelledby="cdkRepositoryHierrachyList"
+        >
+          <cdk-repository-hierarchy-list
+            :dataSource="dataSource"
+            id="cdkRepositoryHierarachyList"
+          ></cdk-repository-hierarchy-list>
+        </div>
+      </cdk-layout-container>
+    </div>
+  </section>
+</fragment>

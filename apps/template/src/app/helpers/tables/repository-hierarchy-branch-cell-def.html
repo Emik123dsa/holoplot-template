@@ -1,0 +1,67 @@
+<fragment>
+  <!-- TODO: implement better drop down, now pure crutch -->
+  <div v-click-outside="hideDropDownState" role="cell">
+    <div
+      v-if="isDropDownStateOpened"
+      class="cdk-drop-down cdk-relative cdk-block"
+      aria-label="cdkDropDown"
+    >
+      <nav v-if="(values && values.length)" role="navigation">
+        <ul
+          id="cdkDropDown"
+          role="listbox"
+          class="
+            cdk-z-10
+            cdk-top-0
+            cdk-m-4
+            cdk-w-full
+            cdk-absolute
+            cdk-max-h-40
+            cdk-shadow-md
+            cdk-rounded-lg
+            cdk-overflow-auto
+            cdk-border
+            cdk-bg-white-50
+          "
+        >
+          <li
+            role="listitem"
+            v-for="(value, index) in values"
+            @click.prevent="handleBranchByShaEvent(value.name, value.commit.sha)"
+            class="
+              hover:cdk-bg-gray-50
+              cdk-relative cdk-py-2 cdk-cursor-pointer cdk-px-4
+            "
+          >
+            <cdk-base-icon fill="currentColor" size="20"
+              >mdiSourceBranch</cdk-base-icon
+            >
+            <span id="defaultBranch" class="cdk-pl-1"> {{ value.name }}</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="cdk-relative cdk-block" role="button">
+      <p
+        ref="cdk-flat-button"
+        class="cdk-text-left cdk-leading-tight cdk-tracking-wide"
+      >
+        <cdk-flat-button
+          tag="button"
+          color="primary"
+          size="normal"
+          aria-label="defaultBranch"
+          aria-hidden="false"
+          @handle-click-event="handleBranchEvent(cdkRowDef.name)"
+        >
+          <cdk-base-icon fill="currentColor" size="20"
+            >mdiSourceBranch</cdk-base-icon
+          >
+          <span id="defaultBranch" class="cdk-pl-1">
+            {{ cdkRowDef.defaultBranch || 'Not valid branches' }}</span
+          >
+        </cdk-flat-button>
+      </p>
+    </div>
+  </div>
+</fragment>

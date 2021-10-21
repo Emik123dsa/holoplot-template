@@ -1,0 +1,72 @@
+<fragment>
+  <div class="cdk-relative cdk-block cdk-min-w-full" role="contentinfo">
+    <cdk-commit-ctx-history-header></cdk-commit-ctx-history-header>
+  </div>
+
+  <section class="cdk-relative cdk-block cdk-min-w-full" role="contentinfo">
+    <div
+      role="main"
+      class="cdk-commit-ctx-history"
+      aria-labelledby="cdk-commit-ctx-name"
+    >
+      <cdk-layout-container :is-centered="false">
+        <div class="cdk-mt-4 cdk-w-full" aria-labelledby="cdkCommitСtxName">
+          <div class="cdk-flex cdk-flex-row cdk-flex-nowrap cdk-items-center">
+            <div class="cdk-font-medium cdk-leading-snug cdk-flex-auto">
+              <h2 id="cdkCommitСtxName" class="cdk-text-left cdk-text-md">
+                {{ dataName }}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </cdk-layout-container>
+    </div>
+
+    <div class="cdk-mt-4" role="main">
+      <cdk-layout-container :is-centered="false">
+        <div
+          role="contentinfo"
+          class="cdk-commit-filters"
+          aria-labelledby="cdkCommitHistoryFilters"
+        >
+          <div class="cdk-flex cdk-flex-row cdk-flex-nowrap cdk-items-center">
+            <cdk-flat-button
+              tag="button"
+              color="primary"
+              size="normal"
+              aria-label="addDataSource"
+              aria-hidden="false"
+            >
+              <span id="addDataSource" class="cdk-pl-1 cdk-text-xs"
+                >View all
+                <strong
+                  class="cdk-bg-gray-100 cdk-px-1 cdk-py-[2px] cdk-rounded-full"
+                  >{{ dataSourceCount }}
+                </strong></span
+              >
+            </cdk-flat-button>
+          </div>
+        </div>
+      </cdk-layout-container>
+    </div>
+
+    <div class="cdk-mt-4" role="main">
+      <cdk-layout-container :is-centered="false">
+        <div
+          role="contentinfo"
+          class="cdk-commit-history"
+          aria-labelledby="cdkCommitHistoryList"
+        >
+          <cdk-commit-history-list
+            :data-source="dataSource"
+            id="cdkCommitHistoryList"
+          ></cdk-commit-history-list>
+        </div>
+      </cdk-layout-container>
+    </div>
+  </section>
+
+  <div class="cdk-relative cdk-block cdk-min-w-full" role="contentinfo">
+    <cdk-commit-ctx-history-footer> </cdk-commit-ctx-history-footer>
+  </div>
+</fragment>

@@ -15,6 +15,7 @@
     "downlevelIteration": true,
     "target": "ESNext",
     "module": "ESNext",
+    "noImplicitAny": false,
     "lib": [
       "ESNext",
       "DOM",

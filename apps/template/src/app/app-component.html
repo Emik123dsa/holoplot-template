@@ -1,0 +1,15 @@
+<fragment>
+  <cdk-header-layout></cdk-header-layout>
+
+  <main id="cdkMainLayout" class="cdk-main-layout" role="main">
+    <div class="cdk-flex cdk-flex-row cdk-flex-nowrap">
+      <div class="cdk-flex-auto">
+        <!-- <keep-alive> TODO resolve issue with keepalive, it seems to me the reason inside `vue-fragment`
+           -->
+        <router-view :key="$route.fullPath"></router-view>
+        <!-- </keep-alive> -->
+      </div>
+    </div>
+  </main>
+  <cdk-footer-layout></cdk-footer-layout>
+</fragment>

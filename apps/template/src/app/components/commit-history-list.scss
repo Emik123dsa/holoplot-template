@@ -1,0 +1,75 @@
+@mixin cdk-table-border($isHeader: false, $isFooter: false, $isBody: false) {
+  @if $isHeader {
+    @apply cdk-border-t;
+  }
+
+  @if $isFooter {
+    @apply cdk-border-b;
+  }
+
+  @if $isBody {
+    @apply cdk-border-t;
+    @apply cdk-border-b;
+  }
+
+  @apply cdk-border-l;
+  @apply cdk-border-r;
+}
+
+.cdk {
+  &-commit {
+    &-history {
+      &-cell {
+        &-def {
+          @apply cdk-text-xs;
+          @apply cdk-font-medium;
+          @apply cdk-normal-case;
+          @apply cdk-break-words;
+          @apply cdk-whitespace-pre-line;
+        }
+      }
+      &-table {
+        &-cell {
+          &-row {
+            @apply cdk-py-3;
+            @apply cdk-px-4;
+          }
+
+          &-grid {
+            @apply cdk-grid;
+            @apply cdk-gap-2;
+            @apply cdk-grid-cols-4;
+            @apply cdk-items-center;
+            @apply cdk-place-content-start;
+            @apply cdk-grid-flow-row-dense;
+          }
+
+          &-header {
+            @include cdk-table-border($isHeader: true);
+
+            @apply cdk-bg-gray-50;
+            @apply cdk-text-violet-50;
+
+            @apply cdk-rounded-t-lg;
+            @apply cdk-border-collapse;
+          }
+
+          &-body {
+            @include cdk-table-border($isBody: true);
+
+            @apply cdk-bg-white-50;
+            @apply cdk-border-collapse;
+          }
+
+          &-footer {
+            @include cdk-table-border($isFooter: true);
+
+            @apply cdk-border-collapse;
+            @apply cdk-rounded-b-lg;
+            @apply cdk-mb-6;
+          }
+        }
+      }
+    }
+  }
+}

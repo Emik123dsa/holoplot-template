@@ -1,0 +1,13 @@
+<template
+  src="@ctx/headers/commit-ctx-history-header.html"
+  lang="html"
+></template>
+<script
+  src="@ctx/headers/commit-ctx-history-header.ts"
+  lang="ts"
+></script>
+<style
+  src="@ctx/headers/commit-ctx-history-header.scss"
+  lang="scss"
+  scoped
+></style>

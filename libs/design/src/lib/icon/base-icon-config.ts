@@ -1,5 +1,15 @@
+import {
+  mdiCog,
+  mdiPlus,
+  mdiFilter,
+  mdiMagnify,
+  mdiCogOutline,
+  mdiPlusOutline,
+  mdiFilterOutline,
+  mdiTrayArrowDown,
+  mdiSourceBranch,
+} from '@mdi/js';
 import { MdiSvg } from 'vue-mdijs';
-import { mdiMagnify } from '@mdi/js';
 
 /**
  * Register all of the required icon static providers.
@@ -8,5 +18,13 @@ import { mdiMagnify } from '@mdi/js';
  */
 export const CDK_BASE_ICON_STATIC_PROVIDERS_FACTORY: () => MdiSvg =
   (): MdiSvg => ({
+    mdiCog,
+    mdiPlus,
+    mdiFilter,
     mdiMagnify,
+    mdiCogOutline,
+    mdiPlusOutline,
+    mdiFilterOutline,
+    mdiTrayArrowDown,
+    mdiSourceBranch,
   });

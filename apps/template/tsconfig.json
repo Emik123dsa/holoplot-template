@@ -1,0 +1,86 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "webpack-env",
+      "node"
+    ],
+    "sourceMap": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ],
+      "@/*": [
+        "./src/app/*"
+      ],
+      "@router": [
+        "./src/app/router/index.ts"
+      ],
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@helpers/*": [
+        "./src/app/helpers/*"
+      ],
+      "@views/*": [
+        "./src/app/views/*"
+      ],
+      "@routes": [
+        "./src/app/routes/index.ts"
+      ],
+      "@bootstrap": [
+        "./src/app/app-module.ts"
+      ],
+      "@ctx/*": [
+        "./src/app/components/contexts/*"
+      ],
+      "@holoplot/api/*": [
+        "../../libs/api/src/lib/*"
+      ],
+      "@holoplot/cdk/*": [
+        "../../libs/cdk/src/lib/*"
+      ],
+      "@holoplot/common/*": [
+        "../../libs/common/src/lib/*"
+      ],
+      "@holoplot/core/*": [
+        "../../libs/core/src/lib/*"
+      ],
+      "@holoplot/design/*": [
+        "../../libs/design/src/lib/*"
+      ],
+      "@holoplot/schema/*": [
+        "../../libs/schema/src/lib/*"
+      ],
+      "@holoplot/server/*": [
+        "../../libs/server/src/lib/*"
+      ],
+      "@holoplot/common/http/*": [
+        "../../libs/common/http/*"
+      ],
+      "@holoplot/common/http": [
+        "../../libs/common/http/index.ts"
+      ],
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}

@@ -1,3 +1,12 @@
+import { OwnerRepository } from './owner-repository';
+
+/**
+ * Full Repository entity.
+ *
+ * @export
+ * @interface Repository
+ * @typedef {Repository}
+ */
 export interface Repository {
   allowForking: boolean;
   archiveUrl: string;
@@ -53,7 +62,7 @@ export interface Repository {
   notificationsUrl: string;
   openIssues: number;
   openIssuesCount: number;
-  owner: Record<string, unknown>;
+  owner: OwnerRepository;
   private: boolean;
   pullsUrl: string;
   pushedAt: Date;

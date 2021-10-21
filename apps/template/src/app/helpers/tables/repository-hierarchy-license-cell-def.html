@@ -1,0 +1,15 @@
+<fragment>
+  <div role="cell" :index="index">
+    <p
+      class="cdk-text-left cdk-leading-tight cdk-tracking-wide"
+      :aria-labelledby="cdkRowDef.nodeId"
+    >
+      <strong
+        :id="cdkRowDef.nodeId"
+        class="cdk-text-sm cdk-font-normal cdk-normal-case"
+      >
+        {{ cdkRowDef.name || 'License Not Found'}}
+      </strong>
+    </p>
+  </div>
+</fragment>

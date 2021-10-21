@@ -4,8 +4,26 @@
     "jsx": "preserve",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["webpack-env", "node"],
-    "strict": true
+    "types": [
+      "webpack-env",
+      "node"
+    ],
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@holoplot/core/*": [
+        "../core/src/lib/*"
+      ],
+      "@holoplot/common/http/*": [
+        "../common/http/*"
+      ],
+      "@holoplot/common/*": [
+        "../common/src/lib/*"
+      ],
+      "@holoplot/common/http": [
+        "../common/http/index.ts"
+      ],
+    }
   },
   "include": [],
   "files": [],

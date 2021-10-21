@@ -1,0 +1,98 @@
+<fragment>
+  <header
+    class="cdk-repository-ctx-hierarchy-header"
+    aria-labelledby="cdkRepositoryHierarchyName"
+  >
+    <cdk-layout-container :is-centered="false">
+      <div
+        role="navigation"
+        class="cdk-repository-ctx-hierarchy"
+        aria-label="cdkCtxHierarchyHeader"
+      >
+        <div
+          class="
+            cdk-flex
+            cdk-flex-row
+            cdk-flex-nowrap
+            cdk-items-center
+            cdk-justify-between
+          "
+        >
+          <div class="cdk-repository-hierarchy">
+            <h1
+              id="cdkRepositoryHierarchyName"
+              class="cdk-text-left cdk-text-lg cdk-font-medium"
+              role="heading"
+            >
+              {{ ctxHeaderName }}
+            </h1>
+          </div>
+          <div
+            class="
+              cdk-flex cdk-flex-row cdk-flex-nowrap cdk-items-center cdk-mr-6
+            "
+          >
+            <div
+              class="cdk-flex-auto cdk-cursor-pointer cdk-mr-6 cdk-opacity-50"
+            >
+              <cdk-base-icon size="32" fill="currentColor"
+                >mdiMagnify</cdk-base-icon
+              >
+            </div>
+            <div class="cdk-flex-grow-0 cdk-flex-shrink-1 cdk-mr-6">
+              <cdk-flat-button
+                tag="button"
+                color="primary"
+                size="normal"
+                class="cdk-px-4"
+                aria-label="addDataFilters"
+                aria-hidden="false"
+              >
+                <cdk-base-icon size="20" fill="currentColor"
+                  >mdiFilterOutline</cdk-base-icon
+                >
+                <span id="addDataFilters" class="cdk-pl-2 cdk-text-xs"
+                  >Filters</span
+                >
+              </cdk-flat-button>
+            </div>
+            <div class="cdk-flex-grow-0 cdk-flex-shrink-1 cdk-mr-6">
+              <cdk-flat-button
+                tag="button"
+                color="primary"
+                size="normal"
+                class="cdk-px-4"
+                aria-label="addDataCustomize"
+                aria-hidden="false"
+              >
+                <cdk-base-icon size="20" fill="currentColor"
+                  >mdiCogOutline</cdk-base-icon
+                >
+                <span id="addDataCustomize" class="cdk-pl-2 cdk-text-xs"
+                  >Customize</span
+                >
+              </cdk-flat-button>
+            </div>
+            <div class="cdk-flex-grow-0 cdk-flex-shrink-1">
+              <cdk-flat-button
+                tag="button"
+                color="primary"
+                size="normal"
+                class="cdk-px-6"
+                aria-label="addDataExport"
+                aria-hidden="false"
+              >
+                <cdk-base-icon fill="currentColor" size="20"
+                  >mdiTrayArrowDown</cdk-base-icon
+                >
+                <span id="addDataExport" class="cdk-pl-2 cdk-text-xs"
+                  >Export</span
+                >
+              </cdk-flat-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </cdk-layout-container>
+  </header>
+</fragment>

@@ -1,0 +1,100 @@
+<fragment>
+  <section id="cdkCommitHistoryTable" role="contentinfo">
+    <div
+      role="table"
+      aria-label="cdkCommits"
+      :aria-rowcount="dataSourceCount"
+      :aria-colcount="cdkHeaderCellDefCount"
+      class="cdk-commit-history-table"
+      aria-describedby="cdkCommitsDetails"
+    >
+      <div
+        role="rowgroup"
+        id="cdkCommitsDetails"
+        class="
+          cdk-commit-history-table-cell-row
+          cdk-commit-history-table-cell-grid
+          cdk-commit-history-table-cell-header
+        "
+      >
+        <template v-if="cdkHeaderCellDefCount">
+          <template
+            v-for="(cdkHeaderCellDef, index) in cdkCommitHistoryHeaderCellDef"
+          >
+            <div
+              role="row"
+              class="cdk-col-span-auto"
+              v-bind:key="cdkHeaderCellDef.label"
+              v-bind:index="index"
+            >
+              <div
+                aria-sort="none"
+                role="columnheader"
+                v-stream:click="{ 
+                  subject: cdkHeaderCellDefEvent$,
+                  data: cdkHeaderCellDef, 
+                  options: { once: false, passive: true, capture: true } }"
+              >
+                <p class="cdk-text-left cdk-leading-tight cdk-tracking-wide">
+                  <strong
+                    class="
+                      cdk-text-xs
+                      cdk-uppercase
+                      cdk-font-medium
+                      cdk-cursor-pointer
+                    "
+                    v-bind:cdk-header-cell-def="cdkHeaderCellDef.label"
+                  >
+                    {{ cdkHeaderCellDef.label }}
+                  </strong>
+                </p>
+              </div>
+            </div>
+          </template>
+        </template>
+      </div>
+
+      <template v-if="dataSourceCount">
+        <template v-for="(cdkColumnDef, index) in dataSource">
+          <div
+            role="rowgroup"
+            id="cdkColumnDef"
+            v-bind:index="index"
+            v-bind:key="cdkColumnDef && cdkColumnDef.id"
+            v-bind:style="{
+              'border-top': index > 0 && index !== dataSourceCount && 'none',
+            }"
+            class="
+              cdk-commit-history-table-cell-row
+              cdk-commit-history-table-cell-body
+              cdk-commit-history-table-cell-grid
+            "
+          >
+            <cdk-commit-history-column-def
+              v-bind:index="index"
+              v-bind:key="cdkColumnDef && cdkColumnDef.id"
+              v-bind:cdk-column-def="cdkColumnDef"
+            ></cdk-commit-history-column-def>
+          </div>
+        </template>
+      </template>
+      <div
+        role="rowgroup"
+        id="cdkColumnDef"
+        class="
+          cdk-commit-history-table-cell-row
+          cdk-commit-history-table-cell-grid
+          cdk-commit-history-table-cell-footer
+        "
+      >
+        <div role="row" class="cdk-col-span-6" aria-rowindex="1">
+          <div role="cell" class="cdk-text-sm">
+            <p class="cdk-text-left cdk-leading-tight cdk-tracking-wide">
+              <slot name="cdk-table-footer-cell-def"></slot>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</fragment>

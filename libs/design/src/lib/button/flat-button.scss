@@ -1,0 +1,55 @@
+@mixin cdk-float-button-transition() {
+  @apply cdk-transition-shadow;
+  @apply cdk-transition-opacity;
+  @apply cdk-transition-colors;
+}
+
+@mixin cdk-float-button-primary($defaultTransition: 200) {
+  @include cdk-float-button-transition();
+
+  @if $defaultTransition == 200 {
+    @apply cdk-duration-200;
+  }
+
+  @apply cdk-transition;
+  @apply hover:cdk-bg-gray-50;
+}
+
+@mixin cdk-flat-base-button() {
+  @apply cdk-py-2;
+  @apply cdk-pl-2;
+  @apply cdk-pr-3;
+
+  @apply cdk-border;
+  @apply cdk-rounded-sm;
+  @apply cdk-select-none;
+  @apply cdk-bg-white-50;
+}
+
+.cdk {
+  &-flat {
+    &-button {
+      @include cdk-flat-base-button();
+
+      &-block {
+        @apply cdk-inline-flex;
+        @apply cdk-flex-row;
+        @apply cdk-items-center;
+        @apply cdk-justify-center;
+      }
+
+      &-primary {
+        @include cdk-float-button-primary();
+
+        @apply cdk-text-sm;
+        @apply cdk-font-medium;
+        @apply cdk-text-violet-50;
+
+        @apply focus:cdk-ring-4;
+        @apply focus:cdk-outline-none;
+        @apply focus:cdk-ring-violet-50;
+        @apply focus:cdk-ring-opacity-50;
+      }
+    }
+  }
+}

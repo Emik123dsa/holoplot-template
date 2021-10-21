@@ -1,0 +1,12 @@
+.cdk {
+  &-repository {
+    &-ctx {
+      &-hierarchy {
+        @apply cdk-py-8;
+        @apply cdk-w-full;
+        @apply cdk-relative;
+        @apply cdk-border-b;
+      }
+    }
+  }
+}

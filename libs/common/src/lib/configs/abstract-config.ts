@@ -1,1 +1,1 @@
-export abstract class CommonConfig {}
+export abstract class AbstractConfig {}

@@ -1,26 +1,25 @@
-import { GithubRequestHeadersConstants } from '../constants/request-headers-constants';
+import { GitHubRequestHeadersConstants } from '../constants/request-headers-constants';
 
-export class GithubRequestHeadersConfig {
-  public static requestHeaders = new Map<
-    string,
-    GithubRequestHeadersConstants
-  >();
+export class GitHubRequestHeadersConfig {
+  public requestHeaders = new Map<string, GitHubRequestHeadersConstants>();
 
-  public static setAcceptHeader() {
-    GithubRequestHeadersConfig.requestHeaders.set(
+  public setAcceptHeader(): void {
+    this.requestHeaders.set(
       'Accept',
-      GithubRequestHeadersConstants.API_BASE_CONTENT_TYPE_HEADER,
+      GitHubRequestHeadersConstants.API_BASE_CONTENT_TYPE_HEADER,
     );
   }
 
-  public static setContentTypeHeader() {
-    GithubRequestHeadersConfig.requestHeaders.set(
+  public setContentTypeHeader(): void {
+    this.requestHeaders.set(
       'Content-Type',
-      GithubRequestHeadersConstants.API_BASE_CONTENT_TYPE_HEADER,
+      GitHubRequestHeadersConstants.API_BASE_CONTENT_TYPE_HEADER,
     );
   }
 
-  public static getRequestHeaders() {
-    return GithubRequestHeadersConfig.requestHeaders;
+  public getRequestHeaders(): Readonly<
+    Map<string, GitHubRequestHeadersConstants>
+  > {
+    return this.requestHeaders;
   }
 }
