@@ -1,5 +1,7 @@
 # Holoplot Github Vorlage
 
+### Please, run only in the development mode.
+
 ## Development
 
 ```sh
@@ -13,6 +15,7 @@ yarn nx run-many --target=build --prod --all
 ```
 
 ## Test
+
 ```sh
 yarn nx run-many --target=test --prod --all
 ```
